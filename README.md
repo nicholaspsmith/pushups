@@ -10,7 +10,8 @@ Pikaday - https://atmospherejs.com/richsilv/pikaday
 D3JS - https://atmospherejs.com/d3js/d3
 
 NVD3 - https://atmospherejs.com/nvd3/nvd3
-http://nvd3-community.github.io/nvd3/
+
+* http://nvd3-community.github.io/nvd3/
 
 Collections
 ----
