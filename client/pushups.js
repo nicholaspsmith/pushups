@@ -1,16 +1,69 @@
 if (Meteor.isClient) {
   Session.setDefault("currentDate", new Date());
+  Session.setDefault("selectedExercise", 'pullups');
+  Session.setDefault("number", 0);
 
 
 Template.body.helpers({
   date: function () {
     return moment(Session.get('currentDate')).format('MMMM Do YYYY');
+  },
+  checkedIf: function (val) {
+    if (Session.get('selectedExercise') === val) {
+      return 'checked';
+    }
+  },
+  currentNumber: function () {
+    return Session.get('number');
+  },
+  movements: function () {
+    var date = Session.get('currentDate');
+    var gtDate = moment(date).startOf('day').toDate();
+    var ltDate = moment(date).endOf('day').toDate();
+    return Movements.find({
+      date: {
+        $gte: gtDate,
+        $lte: ltDate
+      }
+    });
   }
 });
 
+window.handle = null;
 Template.body.events({
-  "click #foo": function(event, template){
-
+  'input input.qty': function (evt) {
+    var self = this;
+    if (handle) {
+      clearTimeout(handle);
+    }
+    handle = setTimeout(function () {
+      var qty = $(evt.target).val();
+      if (qty==null){
+        qty=0;
+      };
+      Session.set('number', Number(qty));
+      console.log(Session.get('number'));
+    }, 500);
+  },
+  'click .movement-selector button': function (e) {
+    e.preventDefault();
+    Session.set('selectedExercise', $(e.target).data('exercise'));
+  },
+  'click .quick-numbers button': function (e) {
+    e.preventDefault();
+    var num = parseInt($(e.target).html(),10);
+    Session.set('number', num);
+  },
+  'submit form': function (e) {
+    e.preventDefault();
+    if (Session.get('number') > 0) {
+      Movements.insert({
+        type: Session.get('selectedExercise'),
+        quantity: Session.get('number'),
+        date: new Date()
+      });
+      alert('Added ' + ' ' + Session.get('number') + ' ' + Session.get('selectedExercise'));
+    }
   }
 });
 

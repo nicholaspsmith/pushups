@@ -9,18 +9,28 @@
     <h2>Log movements</h2>
     <form action="">
       <div class="num">
-        <input type="number">
+        <input placeholder="0" value="{{currentNumber}}" type="text" pattern="\d*" class="qty">
+      </div>
+      <div class="quick-numbers">
+        <button>5</button>
+        <button>10</button>
+        <button>20</button>
+        <button>50</button>
+        <button>100</button>
       </div>
       <div class="movement-selector">
-        <button><img src="/pushup.png" alt="pushup"></button>
-        <button><img src="/pullup.png" alt="pullup"></button>
-        <button><img src="/situp.png" alt="situp"></button>
+        <button class="pullups {{checkedIf 'pullups'}}"><img src="/pullup.png" alt="pullups" data-exercise="pullups"></button>
+        <button class="pushups {{checkedIf 'pushups'}}"><img src="/pushup.png" alt="pushups" data-exercise="pushups"></button>
+        <button class="situps {{checkedIf 'situps'}}"><img src="/situp.png" alt="situps" data-exercise="situps"></button>
       </div>
       <input type="submit">
     </form>
 
   <!-- {{else}} -->
     <!-- show graph -->
+    {{#each movements}}
+      {{> movement}}
+    {{/each}}
   <!-- {{/if}} -->
 </body>
 
@@ -28,4 +38,10 @@
   <div class="date-time">
     <input type="text" class="datepicker" id="datepicker" value="{{currentDate}}" readonly="true">
   </div>
+</template>
+
+<template name="movement">
+  {{type}}
+  {{quantity}}
+  {{date}}
 </template>
