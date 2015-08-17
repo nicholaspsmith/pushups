@@ -3,9 +3,8 @@
 </head>
 
 <body>
-  {{> datepicker}}{{date}}
+  {{date}}
 
-  <!-- {{#if isMobile}} -->
     <h2>Log movements</h2>
     <form action="">
       <div class="num">
@@ -26,12 +25,33 @@
       <input type="submit">
     </form>
 
-  <!-- {{else}} -->
-    <!-- show graph -->
-    {{#each movements}}
-      {{> movement}}
-    {{/each}}
-  <!-- {{/if}} -->
+  {{#if isMobile}}
+  {{else}}
+    {{> datepicker}}
+    <div class="pushup-list">
+      <h2>Pushups</h2>
+      {{#each movements 'pushups'}}
+        {{> movement}}
+      {{/each}}
+      {{total 'pushups'}}
+    </div>
+
+    <div class="situp-list">
+      <h2>Situps</h2>
+      {{#each movements 'situps'}}
+        {{> movement}}
+      {{/each}}
+      {{total 'pushups'}}
+    </div>
+
+    <div class="pullup-list">
+      <h2>Pullups</h2>
+      {{#each movements 'pullups'}}
+        {{> movement}}
+      {{/each}}
+      {{total 'pushups'}}
+    </div>
+  {{/if}}
 </body>
 
 <template name="datepicker">

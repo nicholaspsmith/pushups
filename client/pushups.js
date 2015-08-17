@@ -16,16 +16,30 @@ Template.body.helpers({
   currentNumber: function () {
     return Session.get('number');
   },
-  movements: function () {
+  movements: function (type) {
+    if (typeof type === 'undefined') {
+      type = ['pushups','pullups','situps'];
+    } else {
+      type = Array(type);
+    }
     var date = Session.get('currentDate');
     var gtDate = moment(date).startOf('day').toDate();
     var ltDate = moment(date).endOf('day').toDate();
     return Movements.find({
+      type: { $in: type },
       date: {
         $gte: gtDate,
         $lte: ltDate
       }
     });
+  },
+  total: function (type) {
+    if (typeof type === 'undefined') {
+      type = ['pushups','pullups','situps'];
+    } else {
+      type = Array(type);
+    }
+    
   }
 });
 
@@ -42,7 +56,6 @@ Template.body.events({
         qty=0;
       };
       Session.set('number', Number(qty));
-      console.log(Session.get('number'));
     }, 500);
   },
   'click .movement-selector button': function (e) {
@@ -66,7 +79,6 @@ Template.body.events({
     }
   }
 });
-
 
  /*
   * Datepicker
