@@ -1,0 +1,31 @@
+<head>
+  <title>pushups</title>
+</head>
+
+<body>
+  {{> datepicker}}{{date}}
+
+  <!-- {{#if isMobile}} -->
+    <h2>Log movements</h2>
+    <form action="">
+      <div class="num">
+        <input type="number">
+      </div>
+      <div class="movement-selector">
+        <button><img src="/pushup.png" alt="pushup"></button>
+        <button><img src="/pullup.png" alt="pullup"></button>
+        <button><img src="/situp.png" alt="situp"></button>
+      </div>
+      <input type="submit">
+    </form>
+
+  <!-- {{else}} -->
+    <!-- show graph -->
+  <!-- {{/if}} -->
+</body>
+
+<template name="datepicker">
+  <div class="date-time">
+    <input type="text" class="datepicker" id="datepicker" value="{{currentDate}}" readonly="true">
+  </div>
+</template>

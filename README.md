@@ -13,6 +13,8 @@ NVD3 - https://atmospherejs.com/nvd3/nvd3
 
 * http://nvd3-community.github.io/nvd3/
 
+Moment - https://atmospherejs.com/momentjs/moment
+
 Collections
 ----
 Collections:
@@ -20,6 +22,6 @@ exercise {
 	type: 'pushup',
 	quantity: 30,
 	date: new Date()
-} 
+}
 
 mvp - workout types: pushup, pullup, situps
