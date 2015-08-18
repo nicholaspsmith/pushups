@@ -75,7 +75,6 @@ Template.body.events({
         quantity: Session.get('number'),
         date: new Date()
       });
-      alert('Added ' + ' ' + Session.get('number') + ' ' + Session.get('selectedExercise'));
     }
   }
 });
