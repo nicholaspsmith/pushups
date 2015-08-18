@@ -28,6 +28,7 @@
   {{#if isMobile}}
   {{else}}
     {{> datepicker}}
+    {{> barchart}}
     <div class="pushup-list">
       <h2>Pushups</h2>
       {{#each movements 'pushups'}}
@@ -64,4 +65,8 @@
   {{type}}
   {{quantity}}
   {{date}}
+</template>
+
+<template name="barchart">
+  <div id="barchart"></div>
 </template>

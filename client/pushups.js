@@ -39,7 +39,7 @@ Template.body.helpers({
     } else {
       type = Array(type);
     }
-    
+
   }
 });
 
