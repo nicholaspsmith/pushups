@@ -39,7 +39,17 @@ Template.barchart.rendered = function() {
         exerciseNames.push(data[0].counts[i].type);
       }
 
-      x0.domain(data.map(function(d) { return d._id; }));
+      function compare(a,b) {
+        if (a._id < b._id)
+          return -1;
+        if (a._id > b._id)
+          return 1;
+        return 0;
+      }
+
+      data = data.sort(compare);
+
+      x0.domain(data.map(function(d) {  return d._id; }));
       x1.domain(exerciseNames).rangeRoundBands([0, x0.rangeBand()]);
       y.domain([0, d3.max(data, function(d) { return d3.max(d.counts, function(d) {
         return d.count;
