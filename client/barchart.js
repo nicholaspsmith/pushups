@@ -32,7 +32,9 @@ Template.barchart.rendered = function() {
 
         // delete the old one before adding new one
         d3.select('svg').remove();
-        var svg = d3.select("#barchart").append("svg")
+
+        //
+        window.svg = d3.select("#barchart").append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
           .append("g")
@@ -52,14 +54,15 @@ Template.barchart.rendered = function() {
           exerciseNames.push(data[0].counts[i].type);
         }
 
-
-
-
+        var max = 0;
         x0.domain(data.map(function(d) {  return d._id; }));
         x1.domain(exerciseNames).rangeRoundBands([0, x0.rangeBand()]);
-        y.domain([0, d3.max(data, function(d) { return d3.max(d.counts, function(d) {
-          return d.count;
-        }); })]);
+        y.domain([0, d3.max(data, function(d) {
+          max = d3.max(d.counts, function(d) {
+            return d.count;
+          });
+          return max;
+        })]);
 
         svg.append("g")
             .attr("class", "x axis")
@@ -80,6 +83,22 @@ Template.barchart.rendered = function() {
             .attr("dy", ".71em")
             .style("text-anchor", "end")
             .text("Count");
+
+        var numticks = max / 5;
+        svg.selectAll("line.horizontalGrid").data(y.ticks(numticks)).enter()
+        .append("line")
+          .attr({
+              "class":"horizontalGrid",
+              "x1" : 1,
+              "x2" : width,
+              "y1" : function(d){ return y(d);},
+              "y2" : function(d){ return y(d);},
+              "fill" : "none",
+              "shape-rendering" : "crispEdges",
+              "stroke" : "#ccc",
+              "stroke-width" : "1px"
+          }
+        );
 
         var day = svg.selectAll("._id")
             .data(data)
@@ -115,8 +134,10 @@ Template.barchart.rendered = function() {
         legend.append("text")
             .attr("x", width - 24)
             .attr("y", 9)
-            .attr("dy", ".35em")
+            .attr("dy", ".3em")
+            .attr("font-size","16px")
             .style("text-anchor", "end")
+            .attr("fill","#F6A321")
             .text(function(d) { return d; });
       }
     })
