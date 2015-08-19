@@ -12,7 +12,7 @@ button {
 .movement-selector button:not(.checked):hover {
   background: rgba(246, 163, 33, 0.5);;
 }
-.checked {
+.movement-selector .checked {
   background: #F6A321;
 }
 
@@ -60,13 +60,19 @@ h2 {
   font-size:26px;
   text-align: center;
   padding:12px 0;
-  font-weight: bold;
+  border-radius: 5px;
+  background: #F6A321;
+  border: none;
 }
 
 .quick-numbers {
   text-align: center;
   margin: 0 0 25px;
   font-size:22px;
+}
+
+.quick-number button {
+  font-style: italic;
 }
 
 .movement-selector {

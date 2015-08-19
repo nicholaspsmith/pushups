@@ -1,8 +1,8 @@
 Meteor.subscribe("movements");
 
 Session.set("currentDate", new Date());
-Session.setDefault("selectedExercise", 'pullups');
-Session.setDefault("number", 0);
+Session.set("selectedExercise", 'pullups');
+Session.set("number", 0);
 
 Template.body.helpers({
   date: function () {
@@ -75,6 +75,12 @@ Template.body.events({
         quantity: Session.get('number'),
         date: new Date()
       });
+      $('.qty').val(0);
+      Session.set('number',0);
+      $('#addedmodal').modal('show');
+      setTimeout(function(){
+        $('#addedmodal').modal('hide');
+      }, 1000);
     }
   }
 });
