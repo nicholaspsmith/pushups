@@ -1,6 +1,6 @@
 Template.barchart.rendered = function() {
   Meteor.setInterval(function(){
-    Meteor.call('getGraph', function(err,res) {
+    Meteor.call('getGraph', Session.get('currentDate'), function(err,res) {
       if (err) {
         console.error(err);
       } else {

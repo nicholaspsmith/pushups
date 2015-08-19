@@ -1,7 +1,7 @@
 Meteor.methods({
-  getGraph: function() {
-    var daystart = moment(new Date()).subtract(7,'days').startOf('day').toDate();
-    var daystop = moment(new Date()).endOf('day').toDate();
+  getGraph: function(date) {
+    var daystart = moment(date).subtract(7,'days').startOf('day').toDate();
+    var daystop = moment(date).endOf('day').toDate();
     var pipeline = [
       {
         $match: {
