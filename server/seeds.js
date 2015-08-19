@@ -1,4 +1,4 @@
-if (Movements.find().count() === 'dontseed') {
+if (Movements.find().count() === 0) {
   var aug10 = new Date('8/10/2015 8:15');
   var aug11 = new Date('8/11/2015 8:15');
   var aug12 = new Date('8/12/2015 8:15');
@@ -250,11 +250,6 @@ if (Movements.find().count() === 'dontseed') {
 
 
   Movements.insert({
-    type: 'pullups',
-    quantity: 8,
-    date: aug18
-  });
-  Movements.insert({
     type: 'pushups',
     quantity: 21,
     date: aug18
@@ -267,11 +262,6 @@ if (Movements.find().count() === 'dontseed') {
   Movements.insert({
     type: 'pushups',
     quantity: 5,
-    date: aug18
-  });
-  Movements.insert({
-    type: 'pullups',
-    quantity: 12,
     date: aug18
   });
   Movements.insert({

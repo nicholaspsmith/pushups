@@ -1,8 +1,8 @@
-if (Meteor.isClient) {
-  Session.setDefault("currentDate", new Date());
-  Session.setDefault("selectedExercise", 'pullups');
-  Session.setDefault("number", 0);
+Meteor.subscribe("movements");
 
+Session.setDefault("currentDate", new Date());
+Session.setDefault("selectedExercise", 'pullups');
+Session.setDefault("number", 0);
 
 Template.body.helpers({
   date: function () {
@@ -100,7 +100,6 @@ Template.body.events({
       Meteor.subscribe('2daysitems', Session.get('currentDate'));
     }
   }
-}
 
 if(Meteor.isCordova){
   Template.name.helpers({
