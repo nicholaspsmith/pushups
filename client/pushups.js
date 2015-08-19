@@ -75,11 +75,11 @@ Template.body.events({
         quantity: Session.get('number'),
         date: new Date()
       });
-      $('.qty').val(0);
-      Session.set('number',0);
       $('#addedmodal').modal('show');
       setTimeout(function(){
         $('#addedmodal').modal('hide');
+        $('.qty').val(0);
+        Session.set('number',0);
       }, 1000);
     }
   }
