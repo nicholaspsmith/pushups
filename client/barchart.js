@@ -19,7 +19,7 @@ Template.barchart.rendered = function() {
             .range([height, 0]);
 
         var color = d3.scale.ordinal()
-            .range(["#2C6ABF", "#A4002E", "#ff8c00"]);
+            .range(["#0D1629", "#192757", "#3B66BF", "#345AA8", "#4577E0"]);
 
         var xAxis = d3.svg.axis()
             .scale(x0)

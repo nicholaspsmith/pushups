@@ -1,20 +1,79 @@
-/* CSS declarations go here */
+body {
+  background: url(/rockywall.png) repeat;
+  color: #333;
+}
+
 button {
   cursor: pointer;
 }
 .movement-selector button {
   transition: all .2s ease;
 }
-.movement-selector button:hover {
-  background: rgba(161, 255, 148, .6);
+.movement-selector button:not(.checked):hover {
+  background: rgba(246, 163, 33, 0.5);;
 }
 .checked {
-  background: rgb(161, 255, 148);
+  background: #F6A321;
 }
 
-button {
+.quick-numbers button,
+.movement-selector button {
   border-radius:50px;
   padding:10px;
   background: none;
   border: none;
+}
+
+.date {
+  text-align: center;
+  font-size:30px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  margin-top:20px;
+}
+
+h2 {
+  font-size: 22px;
+  text-align: center;
+}
+
+.submit-button {
+  width:175px;
+  height:50px;
+  border-radius:5px;
+  border:none;
+  margin:20px 0 0;
+  background: #005A8E;
+  font-size:22px;
+  color:#fff;
+  margin: 5px auto 0;
+  display:block;
+}
+
+.num {
+  width:100px;
+  display:block;
+  margin: 20px auto;
+}
+.qty {
+  width:100%;
+  font-size:26px;
+  text-align: center;
+  padding:12px 0;
+  font-weight: bold;
+}
+
+.quick-numbers {
+  text-align: center;
+  margin: 0 0 25px;
+  font-size:22px;
+}
+
+.movement-selector {
+  text-align: center;
+}
+
+.movement-selector button {
+  display: inline;
+  margin:0 5px 50px;
 }

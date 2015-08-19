@@ -1,0 +1,22 @@
+@media (min-width: 768px) {
+  /* desktop only styles */
+}
+
+h1 {
+  text-align: center;
+  margin: 40px 0 50px;
+  font-weight: bold;
+}
+
+.date-time {
+  font-size:18px;
+  text-align:center;
+  margin: 0 0 50px
+}
+
+#datepicker {
+  text-align:center;
+  background:#333;
+  color: #4577E0;
+  padding:10px 0;
+}

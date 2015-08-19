@@ -3,8 +3,8 @@
 </head>
 
 <body>
-  {{date}}
-
+  {{#if isMobile}}
+    <div class="date">{{date}}</div>
     <h2>Log movements</h2>
     <form action="">
       <div class="num">
@@ -22,11 +22,11 @@
         <button class="pushups {{checkedIf 'pushups'}}"><img src="/pushup.png" alt="pushups" data-exercise="pushups"></button>
         <button class="situps {{checkedIf 'situps'}}"><img src="/situp.png" alt="situps" data-exercise="situps"></button>
       </div>
-      <input type="submit" clas="btn btn-primary btn btn-info">
+      <input type="submit" class="btn btn-primary btn-info submit-button">
     </form>
-
-  {{#if isMobile}}
   {{else}}
+    <h1>1 Week Summary</h1>
+    <div class="date">{{date}}</div>
     {{> datepicker}}
     {{> barchart}}
   {{/if}}
