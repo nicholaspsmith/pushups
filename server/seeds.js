@@ -269,4 +269,9 @@ if (Movements.find().count() === 0) {
     quantity: 30,
     date: aug18
   });
+  Movements.insert({
+    type: 'squats',
+    quantity: 30,
+    date: aug18
+  });
 }

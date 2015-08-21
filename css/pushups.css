@@ -83,3 +83,7 @@ h2 {
   display: inline;
   margin:0 5px 50px;
 }
+
+.movement-selector button img {
+  width: 40px;
+}

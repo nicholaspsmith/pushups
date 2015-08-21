@@ -5,7 +5,7 @@
 </head>
 
 <body>
-  {{#if isMobile}}
+  <!-- {{#if isMobile}} -->
     <div class="date">{{date}}</div>
     <h2>Log movements</h2>
     <form action="">
@@ -23,16 +23,17 @@
         <button class="pullups {{checkedIf 'pullups'}}"><img src="/pullup.png" alt="pullups" data-exercise="pullups"></button>
         <button class="pushups {{checkedIf 'pushups'}}"><img src="/pushup.png" alt="pushups" data-exercise="pushups"></button>
         <button class="situps {{checkedIf 'situps'}}"><img src="/situp.png" alt="situps" data-exercise="situps"></button>
+        <button class="squats {{checkedIf 'squats'}}"><img src="/squat.png" alt="squats" data-exercise="squats"></button>
       </div>
       <input type="submit" class="btn btn-primary btn-info submit-button">
     </form>
     {{> addedmodal}}
-  {{else}}
+  <!-- {{else}} -->
     <h1>1 Week Summary</h1>
     <div class="date">{{date}}</div>
     {{> datepicker}}
     {{> barchart}}
-  {{/if}}
+  <!-- {{/if}} -->
 </body>
 
 <template name="datepicker">
