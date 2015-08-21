@@ -1,7 +1,7 @@
 Meteor.methods({
   getGraph: function(date) {
-    var daystart = moment(date).tz("America/Chicago").subtract(7,'days').startOf('day').toDate();
-    var daystop = moment(date).tz("America/Chicago").endOf('day').toDate();
+    var daystart = moment(date).subtract(5,'hours').subtract(7,'days').startOf('day').toDate();
+    var daystop = moment(date).subtract(5,'hours').endOf('day').toDate();
     var pipeline = [
       {
         $match: {
@@ -27,15 +27,14 @@ Meteor.methods({
         }
       }
     ];
-    console.log(res);
     var res = Movements.aggregate(pipeline);
     return res;
   }
 });
 
 Meteor.publish("movements", function(argument){
-  var daystart = moment(new Date()).tz("America/Chicago").subtract(7,'days').startOf('day').toDate();
-  var daystop = moment(new Date()).tz("America/Chicago").endOf('day').toDate();
+  var daystart = moment(new Date()).subtract(5,'hours').subtract(7,'days').startOf('day').toDate();
+  var daystop = moment(new Date()).subtract(5,'hours').endOf('day').toDate();
   return Movements.find({
     date: {
       $gte: daystart,

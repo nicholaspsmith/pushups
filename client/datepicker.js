@@ -15,7 +15,7 @@
      var now = moment();
      minute = now.format('mm');
      hour = now.format('HH');
-     Session.set('currentDate', moment($(e.target).val()).hour(0).minute(0).toDate());
+     Session.set('currentDate', moment($(e.target).val()).tz("America/Chicago").toDate());
      Meteor.subscribe('2daysitems', Session.get('currentDate'));
    }
  }

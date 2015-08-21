@@ -49,10 +49,11 @@ Template.barchart.rendered = function() {
         }
         data = data.sort(compare);
 
-        var exerciseNames = [];
-        for (var i = 0; i < data[0].counts.length; i++) {
-          exerciseNames.push(data[0].counts[i].type);
-        }
+        // var exerciseNames = [];
+        // for (var i = 0; i < data[0].counts.length; i++) {
+        //   exerciseNames.push(data[0].counts[i].type);
+        // }
+        var exerciseNames = ['pullups','pushups','situps','squats'];
 
         var max = 0;
         x0.domain(data.map(function(d) {  return d._id; }));
@@ -113,7 +114,7 @@ Template.barchart.rendered = function() {
               return d.counts;
             })
           .enter().append("rect")
-            .attr("width", (x1.rangeBand() / 1.05))
+            .attr("width", (x1.rangeBand() / 1.0))
             .attr("x", function(d) { return x1(d.type); })
             .attr("y", function(d) { return y(d.count); })
             .attr("height", function(d) { return height - y(d.count); })

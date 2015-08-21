@@ -1,6 +1,6 @@
 Meteor.subscribe("movements");
 
-Session.set("currentDate", new Date());
+Session.set("currentDate", moment(new Date()).tz("America/Chicago").toDate());
 Session.set("selectedExercise", 'pullups');
 Session.set("number", 0);
 
@@ -48,7 +48,7 @@ Template.body.events({
       Movements.insert({
         type: Session.get('selectedExercise'),
         quantity: Session.get('number'),
-        date: new Date()
+        date: moment(new Date()).tz("America/Chicago").toDate()
       });
       $('#addedmodal').modal('show');
       setTimeout(function(){
