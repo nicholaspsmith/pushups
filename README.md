@@ -36,6 +36,9 @@ Use case will be:
 * Users will create a profile
 * Users will add friends from their contacts list / facebook
 * Users' activity for the day is logged
+* Users will have option to post results to facebook
+* Users will have ability to "challenge" friends
+* Users will level up based on amount of activity logged on the app
 * Point of social capabilities is to encourage competitions
 
 
