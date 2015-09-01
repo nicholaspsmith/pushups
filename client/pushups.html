@@ -5,10 +5,12 @@
 </head>
 
 <body>
-  <!-- {{#if isMobile}} -->
+
+
+  {{#if isMobile}}
     <div class="date">{{date}}</div>
     <h2>Log movements</h2>
-    <form action="">
+    <form>
       <div class="num">
         <input placeholder="0" value="{{currentNumber}}" type="text" pattern="\d*" class="qty">
       </div>
@@ -28,12 +30,48 @@
       <input type="submit" class="btn btn-primary btn-info submit-button">
     </form>
     {{> addedmodal}}
-  <!-- {{else}} -->
-    <h1>1 Week Summary</h1>
-    <div class="date">{{date}}</div>
-    {{> datepicker}}
-    {{> barchart}}
-  <!-- {{/if}} -->
+  {{else}}
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#dashboard" aria-controls="dashboard" role="tab" data-toggle="tab">Dashboard</a></li>
+      <li role="presentation"><a href="#new" aria-controls="new" role="tab" data-toggle="tab">New</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane" id="new">
+        <div class="date">{{date}}</div>
+        <h2>Log movements</h2>
+        <form>
+          <div class="num">
+            <input placeholder="0" value="{{currentNumber}}" type="text" pattern="\d*" class="qty">
+          </div>
+          <div class="quick-numbers">
+            <button>5</button>
+            <button>10</button>
+            <button>20</button>
+            <button>50</button>
+            <button>100</button>
+          </div>
+          <div class="movement-selector">
+            <button class="pullups {{checkedIf 'pullups'}}"><img src="/pullup.png" alt="pullups" data-exercise="pullups"></button>
+            <button class="pushups {{checkedIf 'pushups'}}"><img src="/pushup.png" alt="pushups" data-exercise="pushups"></button>
+            <button class="situps {{checkedIf 'situps'}}"><img src="/situp.png" alt="situps" data-exercise="situps"></button>
+            <button class="squats {{checkedIf 'squats'}}"><img src="/squat.png" alt="squats" data-exercise="squats"></button>
+          </div>
+          <input type="submit" class="btn btn-primary btn-info submit-button">
+        </form>
+        {{> addedmodal}}
+      </div>
+      <div role="tabpanel" class="tab-pane active" id="dashboard">
+        <h1>1 Week Summary</h1>
+        <div class="date">{{date}}</div>
+        {{> datepicker}}
+        {{> barchart}}
+      </div>
+    </div>
+  {{/if}}
 </body>
 
 <template name="datepicker">
