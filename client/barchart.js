@@ -1,8 +1,9 @@
 Template.barchart.rendered = function() {
-  Meteor.setInterval(function(){
+  var getGraph = function () {
     Meteor.call('getGraph', Session.get('currentDate'), function(err,res) {
       if (err) {
         console.error(err);
+        window.clearInterval(intervalRunner);
       } else {
         var data = res;
 
@@ -142,5 +143,6 @@ Template.barchart.rendered = function() {
             .text(function(d) { return d; });
       }
     })
-  }, 500);
+  };
+  var intervalRunner = self.setInterval(function () { getGraph() }, 500);
 }
