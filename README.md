@@ -12,12 +12,13 @@ Moment - https://atmospherejs.com/momentjs/moment
 Data Structures
 ----
 Collections:
+```
 exercise {
 	type: 'pushup',
 	quantity: 30,
 	date: new Date()
 }
-
+```
 
 Next Steps
 =======
