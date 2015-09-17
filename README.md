@@ -1,6 +1,11 @@
 Pushups Situps Pullups
 ========
 
+@TODO:
+
+* enable notifications in ios telling you when to go do some pushups / pullups / situps
+* ios notifications for when to eat
+
 App for tracking number of pushups / situps / pullups / squats I do every day Meteor + Cordova IOS App
 
 Includes
