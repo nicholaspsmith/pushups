@@ -3,6 +3,7 @@ Pushups Situps Pullups
 
 @TODO:
 
+* Fix issue where graph is blank if days exist with no entries
 * enable notifications in ios telling you when to go do some pushups / pullups / situps
 * ios notifications for when to eat
 
