@@ -7,7 +7,7 @@
 <body>
 
 
-  {{#if isMobile}}
+  <!-- {{#if isMobile}}
     <div class="date">{{date}}</div>
     <h2>Log movements</h2>
     <form>
@@ -30,17 +30,17 @@
       <input type="submit" class="btn btn-primary btn-info submit-button">
     </form>
     {{> addedmodal}}
-  {{else}}
+  {{else}} -->
 
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active"><a href="#dashboard" aria-controls="dashboard" role="tab" data-toggle="tab">Dashboard</a></li>
-      <li role="presentation"><a href="#new" aria-controls="new" role="tab" data-toggle="tab">New</a></li>
+      <li role="presentation" class="{{#if isDesktop}}active{{/if}}"><a href="#dashboard" aria-controls="dashboard" role="tab" data-toggle="tab">Dashboard</a></li>
+      <li role="presentation" class="{{#if isMobile}}active{{/if}}"><a href="#new" aria-controls="new" role="tab" data-toggle="tab">New</a></li>
     </ul>
 
     <!-- Tab panes -->
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane" id="new">
+      <div role="tabpanel" class="tab-pane {{#if isMobile}}active{{/if}}" id="new">
         <div class="date">{{date}}</div>
         <h2>Log movements</h2>
         <form>
@@ -64,14 +64,14 @@
         </form>
         {{> addedmodal}}
       </div>
-      <div role="tabpanel" class="tab-pane active" id="dashboard">
+      <div role="tabpanel" class="tab-pane {{#if isDesktop}}active{{/if}}" id="dashboard">
         <h1>1 Week Summary</h1>
         <div class="date">{{date}}</div>
         {{> datepicker}}
         {{> barchart}}
       </div>
     </div>
-  {{/if}}
+  <!-- {{/if}} -->
 </body>
 
 <template name="datepicker">
