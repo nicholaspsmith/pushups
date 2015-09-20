@@ -9,21 +9,21 @@ App.info({
 });
 
 App.icons({
-  // 'iphone': 'icons/icon-120x120.png',
-  // 'iphone_2x': 'icons/icon-120x120.png',
-  // 'iphone_3x': 'icons/icon-180x180.png',
-  // 'ipad': 'icons/icon-76x76.png',
-  // 'ipad_2x': 'icons/icon-152x152.png',
+  'iphone': 'icons/icon-120x120.png',
+  'iphone_2x': 'icons/icon-120x120.png',
+  'iphone_3x': 'icons/icon-120x120.png',
+  'ipad': 'icons/icon-120x120.png',
+  'ipad_2x': 'icons/icon-120x120.png'
 });
 
 App.launchScreens({
-  //  'iphone': 'splash/mainsplash.png',
-  //  'iphone_2x': 'splash/mainsplash.png',
-  //  'iphone5': 'splash/mainsplash.png',
-  //  'ipad_portrait': 'splash/mainsplash.png',
-  //  'ipad_portrait_2x': 'splash/mainsplash.png',
-  //  'ipad_landscape': 'splash/mainsplash.png',
-  //  'ipad_landscape_2x': 'splash/mainsplash.png'
+   'iphone': 'splash/mainsplash.png',
+   'iphone_2x': 'splash/mainsplash.png',
+   'iphone5': 'splash/mainsplash.png',
+   'ipad_portrait': 'splash/mainsplash.png',
+   'ipad_portrait_2x': 'splash/mainsplash.png',
+   'ipad_landscape': 'splash/mainsplash.png',
+   'ipad_landscape_2x': 'splash/mainsplash.png'
 });
 
 // Set PhoneGap/Cordova preferences
