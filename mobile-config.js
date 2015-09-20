@@ -28,7 +28,7 @@ App.launchScreens({
 
 // Set PhoneGap/Cordova preferences
 App.setPreference('StatusBarOverlaysWebView', 'false');
-App.setPreference('StatusBarBackgroundColor', '#005A8E');
+App.setPreference('StatusBarBackgroundColor', '#333');
 App.setPreference('ShowSplashScreenSpinner', 'false');
 
 App.accessRule('*');
