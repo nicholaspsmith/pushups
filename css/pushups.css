@@ -1,6 +1,7 @@
 body {
   background: url(/rockywall.png) repeat;
   color: #333;
+  padding-bottom: 45px;
 }
 
 button {
@@ -26,10 +27,10 @@ button {
 
 .date {
   text-align: center;
-  font-size:30px;
+  font-size: 28px;
   font-weight: bold;
   margin-bottom: 40px;
-  margin-top:20px;
+  margin-top: 40px;
 }
 
 h2 {
@@ -86,4 +87,18 @@ h2 {
 
 .movement-selector button img {
   width: 40px;
+}
+
+.bottom {
+  position: fixed;
+  bottom: 0;
+}
+
+.nav-tabs.bottom {
+  width: 100%;
+  background: rgb(221, 221, 221);
+}
+
+.nav-tabs li {
+  font-size: 18px;
 }
