@@ -3,14 +3,8 @@ Pushups Situps Pullups
 
 @TODO:
 
-* Fix issue where graph is blank if days exist with no entries
 * enable notifications in ios telling you when to go do some pushups / pullups / situps
 * ios notifications for when to eat
-
-Look back (starting at 7 days) to furthest day back that has data. Base case only show today (startday = endday )
-
-
-Also: fix publication. It's only publishing current day's movements. 
 
 
 
@@ -55,4 +49,3 @@ Use case will be:
 * Users will have ability to "challenge" friends
 * Users will level up based on amount of activity logged on the app
 * Point of social capabilities is to encourage competitions
-
