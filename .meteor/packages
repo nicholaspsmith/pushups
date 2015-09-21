@@ -13,3 +13,5 @@ meteorhacks:aggregate
 twbs:bootstrap
 mobile-status-bar
 mrt:moment-timezone
+accounts-password
+accounts-ui
