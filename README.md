@@ -3,6 +3,11 @@ Pushups Situps Pullups
 
 @TODO:
 
+* save movements with user account
+* allow users to view only their movements
+* allow users to 'friend' other users
+* allow users to view their friends' movements
+
 * enable notifications in ios telling you when to go do some pushups / pullups / situps
 * ios notifications for when to eat
 
