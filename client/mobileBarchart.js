@@ -1,6 +1,6 @@
 Template.mobileBarchart.rendered = function() {
   var getGraph = function () {
-    Meteor.call('getSingleDayGraph', function(err,res) {
+    Meteor.call('getSingleDayGraph', Session.get('currentDate'), function(err,res) {
       if (err) {
         console.error(err);
         window.clearInterval(intervalRunner);
@@ -9,7 +9,7 @@ Template.mobileBarchart.rendered = function() {
 
         margin = {top: 20, right: 40, bottom: 30, left: 60},
             width = (window.innerWidth - 25) - margin.left - margin.right,
-            height = 400 - margin.top - margin.bottom;
+            height = 280 - margin.top - margin.bottom;
 
         var x0 = d3.scale.ordinal()
             .rangeRoundBands([0, width], .1);
