@@ -5,7 +5,8 @@
 </head>
 
 <body>
-
+  {{> loginButtons}}
+  {{#if currentUser}}
   <!-- Nav tabs -->
   <ul class="nav nav-tabs {{#if isMobile}}bottom{{/if}}" role="tablist">
     <li role="presentation" class="{{#if isDesktop}}active{{/if}}"><a href="#dashboard" aria-controls="dashboard" role="tab" data-toggle="tab">Dashboard</a></li>
@@ -48,6 +49,7 @@
       {{/if}}
     </div>
   </div>
+  {{/if}}
 
 </body>
 
