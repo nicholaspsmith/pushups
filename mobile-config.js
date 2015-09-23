@@ -1,6 +1,6 @@
 App.info({
   id: 'com.nicholaspsmith.pushups',
-  version: '0.0.1',
+  version: '0.0.2',
   name: 'Push!',
   description: 'Track number of pushups, pullups, and situps you do in a day.',
   author: 'Nicholas P Smith',
@@ -28,7 +28,7 @@ App.launchScreens({
 
 // Set PhoneGap/Cordova preferences
 App.setPreference('StatusBarOverlaysWebView', 'false');
-App.setPreference('StatusBarBackgroundColor', '#fff');
+App.setPreference('StatusBarBackgroundColor', '#d1233a');
 App.setPreference('ShowSplashScreenSpinner', 'false');
 
 App.accessRule('*');
