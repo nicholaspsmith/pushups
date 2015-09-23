@@ -6,6 +6,7 @@ Meteor.methods({
     var pipeline = [
       {
         $match: {
+          user: this.userId,
           date: {
             $gte: daystart,
             $lte: daystop
@@ -35,6 +36,7 @@ Meteor.methods({
     var pipeline = [
       {
         $match: {
+          user: this.userId,
           date: {
             $gte: moment(date).startOf('day').toDate(),
             $lte: moment(date).endOf('day').toDate()
