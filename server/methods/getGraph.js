@@ -31,13 +31,13 @@ Meteor.methods({
     var res = Movements.aggregate(pipeline);
     return res;
   },
-  getSingleDayGraph: function() {
+  getSingleDayGraph: function(date) {
     var pipeline = [
       {
         $match: {
           date: {
-            $gte: moment().startOf('day').toDate(),
-            $lte: moment().endOf('day').toDate()
+            $gte: moment(date).startOf('day').toDate(),
+            $lte: moment(date).endOf('day').toDate()
           }
         }
       },
