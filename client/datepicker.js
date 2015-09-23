@@ -21,7 +21,9 @@
  });
 
  Template.datepicker.events({
-   'click .day': function(e) {
-     alert(e);
+   'change #my-datepicker': function(e) {
+     var val = $(e.target).val();
+     Session.set('currentDate', moment(val).tz("America/Chicago").toDate());
+     Meteor.subscribe('2daysitems', Session.get('currentDate'));
    }
  });
