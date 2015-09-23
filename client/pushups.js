@@ -46,6 +46,7 @@ Template.body.events({
     e.preventDefault();
     if (Session.get('number') > 0) {
       Movements.insert({
+        user: Meteor.userId(),
         type: Session.get('selectedExercise'),
         quantity: Session.get('number'),
         date: moment(new Date()).tz("America/Chicago").toDate()
