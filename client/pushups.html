@@ -2,6 +2,8 @@
   <title>pushups</title>
   <meta name="viewport" content="user-scalable=no, initial-scale=1,
         maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+  <link rel="stylesheet" href="client/cal-heatmap/cal-heatmap.css" />
+  <script type="text/html" src="client/cal-heatmap/cal-heatmap.min.js"></script>
 </head>
 
 <body>
@@ -10,9 +12,9 @@
   <ul class="nav nav-tabs {{#if isMobile}}bottom{{/if}}" role="tablist">
     <li role="presentation" class="{{#if isDesktop}}active{{/if}}"><a href="#dashboard" aria-controls="dashboard" role="tab" data-toggle="tab">Dashboard</a></li>
     <li role="presentation" class="{{#if isMobile}}active{{/if}}"><a href="#new" aria-controls="new" role="tab" data-toggle="tab">New</a></li>
+    <li role="presentation"><a href="#heatmap" aria-controls="dashboard" role="tab" data-toggle="tab">Heatmap</a></li>
     <li role="presentation" class="login-tab"><a href="#" aria-controls="new" role="tab" data-toggle="tab">{{> loginButtons}}</a></li>
   </ul>
-
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane {{#if isMobile}}active{{/if}}" id="new">
@@ -49,11 +51,13 @@
         {{> mobileBarchart}}
       {{/if}}
     </div>
+    <div role="tabpanel" class="tab-pane" id="heatmap">
+      {{> heatmap}}
+    </div>
   </div>
   {{else}}
     {{> loginButtons}}
   {{/if}}
-
 </body>
 
 <template name="datepicker">
