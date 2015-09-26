@@ -2,17 +2,6 @@ body {
   font: 10px sans-serif;
 }
 
-.not-connected {
-  text-align: center;
-  background: rgb(255, 75, 31);
-  color: #fff;
-  font-size: 22px;
-  position: absolute;
-  bottom: 0;
-  padding: 12px 0;
-  width: 100%;
-}
-
 .axis path,
 .axis line {
   fill: none;

@@ -3,6 +3,18 @@ body {
   padding-bottom: 45px;
 }
 
+.not-connected {
+  text-align: center;
+  background: rgb(255, 75, 31);
+  color: #fff;
+  font-size: 22px;
+  position: absolute;
+  bottom: 0;
+  padding: 12px 0;
+  width: 100%;
+  z-index: 101;
+}
+
 .title-logged-out {
   margin-top: 75px;
   font-size: 55px;
@@ -101,6 +113,7 @@ h2 {
 .nav-tabs.bottom {
   width: 100%;
   background: rgb(221, 221, 221);
+  z-index: 99;
 }
 
 .nav-tabs li {

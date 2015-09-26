@@ -1,4 +1,4 @@
-.mobile #login-buttons .login-link-and-dropdown-list {
+.mobile > #login-buttons .login-link-and-dropdown-list {
   text-align: center;
   width: 80%;
   padding: 20px 0;
@@ -22,7 +22,7 @@
 .mobile #login-dropdown-list .login-button {
   padding: 12px 0;
 }
-.mobile #login-buttons {
+.mobile > #login-buttons {
   width: 100%;
   position: absolute;
   left: 50%;
@@ -40,6 +40,15 @@
 .nav-tabs #login-buttons {
   border: none;
   padding: 0;
+}
+
+.mobile .nav-tabs #login-dropdown-list.accounts-dialog {
+
+position: fixed;
+bottom: 47px;
+top: auto;
+left: auto;
+right: 12px;
 }
 
 @media (min-width: 720px) {
