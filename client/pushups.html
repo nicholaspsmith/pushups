@@ -10,7 +10,6 @@
   <!-- Nav tabs -->
   <ul class="nav nav-tabs {{#if isMobile}}bottom{{/if}}" role="tablist">
     <li role="presentation" class="{{#if isDesktop}}active{{/if}}"><a href="#dashboard" aria-controls="dashboard" role="tab" data-toggle="tab">Dashboard</a></li>
-    <li role="presentation"><a href="#heatmap" aria-controls="dashboard" role="tab" data-toggle="tab">Heatmap</a></li>
     <li role="presentation" class="{{#if isMobile}}active{{/if}}"><a href="#new" aria-controls="new" role="tab" data-toggle="tab">New</a></li>
     <li role="presentation" class="login-tab"><a href="#" aria-controls="new" role="tab" data-toggle="tab">{{> loginButtons}}</a></li>
   </ul>
@@ -43,15 +42,7 @@
     <div role="tabpanel" class="tab-pane {{#if isDesktop}}active{{/if}}" id="dashboard">
       <div class="date">{{date}}</div>
       {{> datepicker}}
-
-      {{#if isDesktop}}
-        {{> heatmap}}
-        <!-- {{> barchart}} -->
-      {{else}}
-        {{> mobileBarchart}}
-      {{/if}}
-    </div>
-    <div role="tabpanel" class="tab-pane" id="heatmap">
+      {{> heatmap}}
     </div>
   </div>
   {{else}}
