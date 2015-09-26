@@ -6,6 +6,11 @@
 </head>
 
 <body>
+  {{#if notConnected}}
+    <div class="not-connected">
+      Not connected to server
+    </div>
+  {{/if}}
   {{#if currentUser}}
   <!-- Nav tabs -->
   <ul class="nav nav-tabs {{#if isMobile}}bottom{{/if}}" role="tablist">
@@ -46,7 +51,10 @@
     </div>
   </div>
   {{else}}
-    {{> loginButtons}}
+    <div class="mobile">
+      <h1 class="title-logged-out">Push!</h1>
+      {{> loginButtons}}
+    </div>
   {{/if}}
 </body>
 

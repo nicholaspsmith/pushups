@@ -15,6 +15,12 @@ Template.body.helpers({
   },
   currentNumber: function () {
     return Session.get('number');
+  },
+  notConnected: function () {
+    if (Meteor.status().connected) {
+      return false
+    }
+    return true;
   }
 });
 
