@@ -58,5 +58,12 @@ Template.body.events({
         Session.set('number',0);
       }, 1000);
     }
+  },
+  'click [href="#dashboard"]': function() {
+    var dateSet = Session.get('currentDate');
+    Session.set('currentDate', moment(dateSet).subtract(1,'day').toDate());
+    setTimeout(function(){
+      Session.set('currentDate', dateSet);
+    },75);
   }
 });
