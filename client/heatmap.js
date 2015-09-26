@@ -54,10 +54,11 @@ Template.heatmap.onRendered(function() {
   });
 
 });
+
 Template.heatmap.topGenresChart = function() {
-  while (Session.get('movementArray').length === 0) {
-    setTimeout(function(){},200);
-  }
+  // while (Session.get('movementArray').length === 0) {
+    // setTimeout(function(){},200);
+  // }
   return {
     chart: {
       type: 'heatmap',
