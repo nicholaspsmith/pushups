@@ -21,6 +21,11 @@ Template.body.helpers({
       return false
     }
     return true;
+  },
+  mobileClass: function () {
+    if (Meteor.isCordova) {
+      return 'mobile';
+    }
   }
 });
 
