@@ -1,14 +1,14 @@
 Session.setDefault("movementArray", []);
 Template.heatmap.onRendered(function() {
   Tracker.autorun(function () {
-    var dataArr = ReactiveMethod.call("getArrayGraph", Session.get('currentDate'));
-    Session.set('movementArray', dataArr);
-    buildChart(Session.get('movementArray'));
+    Session.set('movementArray', ReactiveMethod.call("getArrayGraph", Session.get('currentDate')));
+    buildChart();
   });
 });
 
 var chart;
-function buildChart(dataArray) {
+function buildChart() {
+  console.log('rebuilding chart');
   chart = $('#movementChart').highcharts({
     chart: {
       type: 'heatmap',
@@ -43,14 +43,11 @@ function buildChart(dataArray) {
     },
     series: [{
       borderWidth: 1,
-      data: dataArray,
+      data: Session.get('movementArray'),
       dataLabels: {
         enabled: true,
         color: '#000000'
       }
     }]
   });
-
-
-
 }
