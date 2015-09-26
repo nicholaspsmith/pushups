@@ -1,15 +1,15 @@
 <head>
   <title>pushups</title>
   <meta name="viewport" content="user-scalable=no, initial-scale=1,
-        maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+  maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
   <script type="text/html" src="client/cal-heatmap/cal-heatmap.min.js"></script>
 </head>
 
 <body>
   {{#if notConnected}}
-    <div class="not-connected">
-      Not connected to server
-    </div>
+  <div class="not-connected">
+    Not connected to server
+  </div>
   {{/if}}
   {{#if currentUser}}
   <!-- Nav tabs -->
@@ -51,19 +51,23 @@
     </div>
   </div>
   {{else}}
-    <div class="mobile">
-      <h1 class="title-logged-out">Push!</h1>
-      {{> loginButtons}}
-    </div>
+  <h1 class="title-logged-out">Push!</h1>
+  {{> loginButtons}}
+  {{#if isMobile}}
+  <div class="mobile">
+    <h1 class="title-logged-out">Push!</h1>
+    {{> loginButtons}}
+  </div>
+  {{/if}}
   {{/if}}
 </body>
 
 <template name="datepicker">
   <div class="date-time">
     {{#if isDesktop}}
-      <input type="text" class="datepicker" id="datepicker" value="{{currentDate}}" readonly="true">
+    <input type="text" class="datepicker" id="datepicker" value="{{currentDate}}" readonly="true">
     {{else}}
-      <input type="text" class="form-control" id="my-datepicker">
+    <input type="date" class="form-control" id="my-datepicker">
     {{/if}}
   </div>
 </template>

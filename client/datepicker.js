@@ -2,7 +2,6 @@
  * Datepicker
  */
  Template.datepicker.rendered = function() {
-   $('#my-datepicker').datepicker();
    var pika = new Pikaday({
      field: document.getElementById('datepicker'),
      onSelect: function () {

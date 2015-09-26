@@ -106,3 +106,13 @@ h2 {
 .nav-tabs li {
   font-size: 18px;
 }
+
+.mobile .date-time {
+  width: 80%;
+  margin: 0 auto 20px;;
+}
+#my-datepicker {
+  width: 100%;
+  font-size: 20px;
+  margin: 0 auto;
+}
