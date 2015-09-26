@@ -3,7 +3,6 @@ Template.heatmap.onRendered(function() {
   Tracker.autorun(function () {
     var dataArr = ReactiveMethod.call("getArrayGraph", Session.get('currentDate'));
     Session.set('movementArray', dataArr);
-    console.log(dataArr);
     buildChart(Session.get('movementArray'));
   });
 });
