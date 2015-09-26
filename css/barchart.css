@@ -2,6 +2,17 @@ body {
   font: 10px sans-serif;
 }
 
+.not-connected {
+  text-align: center;
+  background: rgb(255, 75, 31);
+  color: #fff;
+  font-size: 22px;
+  position: absolute;
+  bottom: 0;
+  padding: 12px 0;
+  width: 100%;
+}
+
 .axis path,
 .axis line {
   fill: none;
@@ -15,41 +26,4 @@ body {
 
 .x.axis path {
   display: none;
-}
-#login-buttons {
-  width: 100%;
-  border-bottom: 1px solid gray;
-  padding: 20px 0;
-}
-.login-link-and-dropdown-list {
-  text-align: center;
-}
-#login-sign-in-link.login-link-text {
-  font-size: 20px;
-  text-align: center;
-}
-
-.nav-tabs #login-buttons {
-  border: none;
-  padding: 0;
-}
-@media (min-width: 720px) {
-  #login-buttons {
-    width: auto;
-    border: none;
-    padding: 0;
-  }
-}
-#login-dropdown-list {
-  position: fixed;
-  top: 10px;
-  left: 12px;
-  width: 100%;
-  font-size: 20px;
-}
-#login-buttons .login-close-text {
-  margin: 15px 0 15px 5px;
-}
-#login-dropdown-list .login-button {
-  padding: 12px 0;
 }

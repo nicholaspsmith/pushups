@@ -1,0 +1,51 @@
+.mobile #login-buttons .login-link-and-dropdown-list {
+  text-align: center;
+  width: 80%;
+  padding: 20px 0;
+  background: rgb(88, 190, 255);
+  border-radius: 8px;
+  margin: 0 auto;
+  display: block;
+}
+.mobile #login-dropdown-list {
+  position: fixed;
+  top: -230px;
+  left: 12px;
+  width: 95%;
+  font-size: 20px;
+  margin:0 auto;
+  transform: translateX(-4px);
+}
+.mobile #login-buttons .login-close-text {
+  margin: 15px 0 15px 5px;
+}
+.mobile #login-dropdown-list .login-button {
+  padding: 12px 0;
+}
+.mobile #login-buttons {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  transform: translate(-50%, -50%);
+}
+.mobile #login-sign-in-link.login-link-text {
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.nav-tabs #login-buttons {
+  border: none;
+  padding: 0;
+}
+
+@media (min-width: 720px) {
+  #login-buttons {
+    width: auto;
+    border: none;
+    padding: 0;
+  }
+}

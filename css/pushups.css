@@ -3,6 +3,11 @@ body {
   padding-bottom: 45px;
 }
 
+.title-logged-out {
+  margin-top: 75px;
+  font-size: 55px;
+}
+
 button {
   cursor: pointer;
 }
