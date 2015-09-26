@@ -1,7 +1,7 @@
 Meteor.methods({
   getGraph: function(date) {
-    var daystart = moment(date).startOf('day').subtract(7,'days').startOf('day').toDate();
-    var daysmovements = lookForMovements(7, date);
+    var daystart = moment(date).startOf('day').subtract(10,'days').startOf('day').toDate();
+    // var daysmovements = lookForMovements(10, date);
     var daystop = moment(date).startOf('day').endOf('day').toDate();
     var pipeline = [
       {
@@ -33,10 +33,11 @@ Meteor.methods({
     return res;
   },
   getArrayGraph: function(date) {
-    var daystart = moment(date).startOf('day').subtract(7,'days').startOf('day').toDate();
-    var daysmovements = lookForMovements(7, date);
-    var daystop = moment(date).startOf('day').endOf('day').toDate();
+    var tzOffset = 5 * 60 * 60 * 1000;
+    var daystart = moment(date).subtract(11,'days').startOf('day').toDate();
+    var daystop = moment(date).endOf('day').toDate();
     var pipeline = [
+      { $project : { date : { $subtract : [ "$date", tzOffset] }, _id: 1, type: 1, quantity: 1 } },
       {
         $match: {
           // user: this.userId,
@@ -89,7 +90,7 @@ Meteor.methods({
     });
     movementArray.sort(function(a,b) {
       if (a[0] == b[0])
-        return a[1] < b[1] ? -1 : 1;
+      return a[1] < b[1] ? -1 : 1;
       return a[0] < b[0] ? -1 : 1;
     });
 
