@@ -68,19 +68,19 @@ Meteor.methods({
       item.counts.forEach(function(count){
         var miniarr = [];
         if (count.type === 'pushups') {
-          miniarr.push(item._id - 1);
+          miniarr.push(item._id);
           miniarr.push(0);
           miniarr.push(count.count);
         } else if (count.type === 'situps') {
-          miniarr.push(item._id - 1);
+          miniarr.push(item._id);
           miniarr.push(1);
           miniarr.push(count.count);
         } else if (count.type === 'pullups') {
-          miniarr.push(item._id - 1);
+          miniarr.push(item._id);
           miniarr.push(2);
           miniarr.push(count.count);
         } else if (count.type === 'squats') {
-          miniarr.push(item._id - 1);
+          miniarr.push(item._id);
           miniarr.push(3);
           miniarr.push(count.count);
         }
@@ -92,7 +92,7 @@ Meteor.methods({
         return a[1] < b[1] ? -1 : 1;
       return a[0] < b[0] ? -1 : 1;
     });
-    
+
     return movementArray;
   },
   getSingleDayGraph: function(date) {
